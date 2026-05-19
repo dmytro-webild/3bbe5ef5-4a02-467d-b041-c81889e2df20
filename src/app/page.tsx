@@ -47,7 +47,7 @@ export default function LandingPage() {
             testimonials={[
               { name: "Elena V.", handle: "@elena_v", testimonial: "The truffle tagliatelle is a life-changing experience. Simply incredible!", rating: 5 }
             ]}
-            buttons={[{ text: "View Menu", href: "#menu" }, { text: "Reserve a Table", href: "#contact" }]}
+            buttons={[{ text: "View Menu", href: "#menu" }, { text: "Reservations", href: "#contact" }]}
             imageSrc="https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=j5fh6x"
             imageAlt="Fine dining restaurant dining room"
           />
