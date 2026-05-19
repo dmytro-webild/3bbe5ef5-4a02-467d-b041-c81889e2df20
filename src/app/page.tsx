@@ -2,17 +2,16 @@
 
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import ReactLenis from "lenis/react";
-import ContactSplit from '@/components/sections/contact/ContactSplit';
-import FaqDouble from '@/components/sections/faq/FaqDouble';
-import FeatureCardTwentySix from '@/components/sections/feature/FeatureCardTwentySix';
-import FooterCard from '@/components/sections/footer/FooterCard';
-import HeroSplitKpi from '@/components/sections/hero/HeroSplitKpi';
-import NavbarLayoutFloatingInline from '@/components/navbar/NavbarLayoutFloatingInline';
-import ProductCardThree from '@/components/sections/product/ProductCardThree';
-import SocialProofOne from '@/components/sections/socialProof/SocialProofOne';
-import TestimonialAboutCard from '@/components/sections/about/TestimonialAboutCard';
-import TestimonialCardThirteen from '@/components/sections/testimonial/TestimonialCardThirteen';
-import { Award, Leaf, Sparkles, Utensils, Wine, Scroll, Palette, Facebook, Instagram, Twitter } from "lucide-react";
+import ContactSplitForm from '@/components/sections/contact/ContactSplitForm';
+import FaqSplitMedia from '@/components/sections/faq/FaqSplitMedia';
+import FeatureCardSeven from '@/components/sections/feature/FeatureCardSeven';
+import FooterBase from '@/components/sections/footer/FooterBase';
+import HeroOverlayTestimonial from '@/components/sections/hero/HeroOverlayTestimonial';
+import NavbarStyleCentered from '@/components/navbar/NavbarStyleCentered/NavbarStyleCentered';
+import ProductCardTwo from '@/components/sections/product/ProductCardTwo';
+import MetricSplitMediaAbout from '@/components/sections/about/MetricSplitMediaAbout';
+import TestimonialCardFive from '@/components/sections/testimonial/TestimonialCardFive';
+import { ChefHat, Leaf, Star, Clock, MapPin, Mail, Phone, Facebook, Instagram, Twitter } from "lucide-react";
 
 export default function LandingPage() {
   return (
@@ -23,14 +22,14 @@ export default function LandingPage() {
         contentWidth="medium"
         sizing="mediumLarge"
         background="none"
-        cardStyle="layered-gradient"
-        primaryButtonStyle="primary-glow"
-        secondaryButtonStyle="glass"
-        headingFontWeight="normal"
+        cardStyle="glass-elevated"
+        primaryButtonStyle="gradient"
+        secondaryButtonStyle="solid"
+        headingFontWeight="semibold"
     >
       <ReactLenis root>
         <div id="nav" data-section="nav">
-          <NavbarLayoutFloatingInline
+          <NavbarStyleCentered
             navItems={[
               { name: "Home", id: "hero" },
               { name: "About", id: "about" },
@@ -38,144 +37,111 @@ export default function LandingPage() {
               { name: "Contact", id: "contact" },
             ]}
             brandName="Milan Restaurant"
-            button={{ text: "Book Now", href: "#contact" }}
+            button={{ text: "Reservations", href: "#contact" }}
           />
         </div>
 
         <div id="hero" data-section="hero">
-          <HeroSplitKpi
-            background={{ variant: "radial-gradient" }}
-            title="Exquisite Dining at Milan Restaurant"
-            description="Experience authentic flavors and fine service in the heart of the city. We bring culinary artistry to every dish we serve."
-            kpis={[
-              { value: "15+", label: "Years Served" },
-              { value: "500+", label: "Gourmet Dishes" },
-              { value: "4.8", label: "Avg Rating" },
+          <HeroOverlayTestimonial
+            title="Authentic Italian Flavors in the Heart of the City"
+            description="Milan Restaurant offers a curated culinary journey through Italy, combining traditional techniques with contemporary elegance."
+            testimonials={[
+              { id: "1", name: "Elena V.", handle: "@elena_v", testimonial: "The truffle tagliatelle is a life-changing experience. Simply incredible!", rating: 5 }
             ]}
-            enableKpiAnimation={true}
-            buttons={[{ text: "Book a Table", href: "#contact" }, { text: "View Menu", href: "#menu" }]}
+            buttons={[{ text: "View Menu", href: "#menu" }, { text: "Reserve a Table", href: "#contact" }]}
             imageSrc="https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=j5fh6x"
-            imageAlt="fine dining restaurant interior"
-            mediaAnimation="slide-up"
-            marqueeItems={[
-              { type: "text-icon", text: "Authentic Cuisine", icon: Utensils },
-              { type: "text-icon", text: "Premium Ingredients", icon: Leaf },
-              { type: "text-icon", text: "Expert Chefs", icon: Award },
-              { type: "text-icon", text: "Wine Selection", icon: Wine },
-              { type: "text-icon", text: "Elegant Vibe", icon: Sparkles },
-            ]}
+            imageAlt="Fine dining restaurant dining room"
           />
         </div>
 
         <div id="about" data-section="about">
-          <TestimonialAboutCard
-            tag="Our Story"
-            title="A Legacy of Culinary Excellence"
-            description="Milan Restaurant was born from a passion for traditional techniques and premium fresh ingredients. We aim to create memories, not just meals."
-            subdescription="Every element of our menu reflects the rich heritage of authentic flavors blended with modern presentation standards."
-            icon={Award}
+          <MetricSplitMediaAbout
+            title="Where Tradition Meets Artistry"
+            description="Founded with a passion for authentic Italian cuisine, Milan Restaurant brings fresh ingredients and ancestral recipes to your plate."
+            metrics={[
+              { value: "15+", title: "Years of Culinary Excellence" },
+              { value: "50+", title: "Handcrafted Recipes" },
+              { value: "4.9", title: "Average Patron Rating" }
+            ]}
             imageSrc="https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=9axj51"
-            mediaAnimation="blur-reveal"
-            useInvertedBackground={false}
+            useInvertedBackground={true}
           />
         </div>
 
         <div id="highlights" data-section="highlights">
-          <FeatureCardTwentySix
-            textboxLayout="default"
-            useInvertedBackground={false}
+          <FeatureCardSeven
+            animationType="slide-up"
+            textboxLayout="split"
+            title="Our Core Philosophy"
+            description="We believe in simplicity, freshness, and the power of shared dining moments."
             features={[
-              { title: "Fresh Ingredients", description: "We source only the finest local produce and authentic spices for our kitchen.", buttonIcon: Leaf },
-              { title: "Authentic Recipes", description: "Traditional secrets passed down through generations for an authentic taste.", buttonIcon: Scroll },
-              { title: "Elegant Atmosphere", description: "The perfect blend of cozy ambiance and refined service for every occasion.", buttonIcon: Wine },
-              { title: "Artistic Plating", description: "We believe dining is an art form that starts with the very first visual impression.", buttonIcon: Palette },
+              { title: "Farm-to-Table Produce", description: "Sourced from local farms daily.", imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=leaf" },
+              { title: "Artisan Craftsmanship", description: "Every dish is meticulously plated.", imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=chef" },
+              { title: "Premium Selection", description: "Exclusive wines and imported cheeses.", imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=wine" },
+              { title: "Cozy Ambiance", description: "The perfect setting for celebration.", imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=table" }
             ]}
-            title="What Defines Milan"
-            description="Discover what makes our culinary experience truly unique and why guests return time after time."
           />
         </div>
 
         <div id="menu" data-section="menu">
-          <ProductCardThree
-            animationType="slide-up"
+          <ProductCardTwo
             gridVariant="uniform-all-items-equal"
-            textboxLayout="default"
-            useInvertedBackground={false}
+            animationType="slide-up"
+            textboxLayout="split"
+            title="Signature Menu"
+            description="Discover our carefully selected main courses, appetizers, and signature desserts."
             products={[
-              { id: "1", name: "Truffle Tagliatelle", price: "$28", imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=e49q3v" },
-              { id: "2", name: "Prime Wagyu Steak", price: "$45", imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=dcr9rg" },
-              { id: "3", name: "Neapolitan Margherita", price: "$22", imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=2d8lx3" },
-              { id: "4", name: "Dark Forest Mousse", price: "$14", imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=hkfk41" },
-              { id: "5", name: "Signature Negroni", price: "$16", imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=4f0z2y" },
-              { id: "6", name: "Garden Harvest Salad", price: "$18", imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=6bunbb" },
+              { id: "1", brand: "Pasta", name: "Truffle Tagliatelle", price: "$28", rating: 5, imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=1" },
+              { id: "2", brand: "Meat", name: "Prime Wagyu Steak", price: "$45", rating: 5, imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=2" },
+              { id: "3", brand: "Pizza", name: "Neapolitan Margherita", price: "$22", rating: 4, imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=3" }
             ]}
-            title="Our Signature Dishes"
-            description="A curated selection of our finest recipes, crafted to perfection."
           />
         </div>
 
         <div id="testimonials" data-section="testimonials">
-          <TestimonialCardThirteen
-            animationType="slide-up"
-            textboxLayout="default"
-            useInvertedBackground={false}
-            showRating={true}
+          <TestimonialCardFive
+            title="What Our Guests Say"
+            description="Honest feedback from food enthusiasts who visit us regularly."
+            textboxLayout="split"
             testimonials={[
-              { id: "1", name: "Alice M.", handle: "@alicem", testimonial: "The atmosphere is unmatched. Every bite was an absolute delight.", rating: 5 },
-              { id: "2", name: "John D.", handle: "@johnd", testimonial: "Milan Restaurant never fails to impress. Truly fine dining at its best.", rating: 5 },
-              { id: "3", name: "Sarah P.", handle: "@sarahp", testimonial: "The staff are professional and the food is out of this world.", rating: 5 },
-              { id: "4", name: "David W.", handle: "@davidw", testimonial: "Best steak I have ever had. The wine pairing was spot on too.", rating: 5 },
-              { id: "5", name: "Elena R.", handle: "@elenar", testimonial: "An exquisite experience from start to finish. Highly recommend it.", rating: 5 },
+              { id: "1", name: "Marco Rossi", date: "Oct 2024", title: "Exceptional!", quote: "The most authentic Italian meal I've had in years. The service is top-notch.", avatarSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=p1", tag: "Foodie" }
             ]}
-            title="Guest Experiences"
-            description="Words from our valued patrons who enjoyed our dining journey."
-          />
-        </div>
-
-        <div id="social-proof" data-section="social-proof">
-          <SocialProofOne
-            textboxLayout="default"
-            useInvertedBackground={false}
-            names={["Culinary Awards 2024", "Top Rated Eats", "City Gourmet Guild", "Michelin Guide Entry", "Hospitality Excellence", "Dining Weekly", "Luxury Taste Association"]}
-            title="Recognized for Quality"
-            description="Proud to be associated with leading hospitality and culinary organizations."
           />
         </div>
 
         <div id="faq" data-section="faq">
-          <FaqDouble
-            textboxLayout="default"
-            useInvertedBackground={false}
-            faqs={[
-              { id: "1", title: "Do I need a reservation?", content: "Yes, we highly recommend booking in advance, especially for weekend evenings." },
-              { id: "2", title: "Are there vegetarian options?", content: "Yes, we offer a dedicated selection of seasonal vegetarian and vegan dishes." },
-              { id: "3", title: "Is there a dress code?", content: "Smart casual is requested for an elegant dining atmosphere." },
-            ]}
+          <FaqSplitMedia
             title="Frequently Asked Questions"
-            description="Everything you need to know about planning your visit."
-            faqsAnimation="blur-reveal"
+            description="Get answers to common queries about dining with us."
+            faqs={[
+              { id: "1", title: "Is a reservation required?", content: "For groups larger than 4, we recommend booking 24 hours in advance." },
+              { id: "2", title: "Do you accommodate allergies?", content: "Yes, please inform your server about any dietary restrictions upon arrival." },
+              { id: "3", title: "Are there parking facilities?", content: "Valet parking is available at the entrance after 6 PM." }
+            ]}
+            faqsAnimation="slide-up"
+            textboxLayout="split"
           />
         </div>
 
         <div id="contact" data-section="contact">
-          <ContactSplit
-            background={{ variant: "plain" }}
-            useInvertedBackground={false}
-            tag="Contact Us"
-            title="Reserve Your Table"
-            description="Join our newsletter for exclusive updates, special menus, and invitations to our dining events."
-            mediaAnimation="slide-up"
+          <ContactSplitForm
+            title="Contact Us"
+            description="Have a special request or event inquiry? Drop us a message."
+            inputs={[
+              { name: "name", type: "text", placeholder: "Full Name", required: true },
+              { name: "email", type: "email", placeholder: "Email Address", required: true }
+            ]}
+            textarea={{ name: "message", placeholder: "How can we assist you?", rows: 4 }}
+            buttonText="Send Request"
           />
         </div>
 
         <div id="footer" data-section="footer">
-          <FooterCard
+          <FooterBase
             logoText="Milan Restaurant"
-            copyrightText="© 2025 Milan Restaurant. All rights reserved."
-            socialLinks={[
-              { icon: Facebook, href: "#", ariaLabel: "Facebook" },
-              { icon: Instagram, href: "#", ariaLabel: "Instagram" },
-              { icon: Twitter, href: "#", ariaLabel: "Twitter" },
+            columns={[
+              { title: "Quick Links", items: [{ label: "Home", href: "#" }, { label: "Menu", href: "#menu" }] },
+              { title: "Find Us", items: [{ label: "123 Gourmet St, City Center", href: "#" }] }
             ]}
           />
         </div>
