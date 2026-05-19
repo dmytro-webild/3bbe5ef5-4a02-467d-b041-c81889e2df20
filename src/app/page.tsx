@@ -85,7 +85,7 @@ export default function LandingPage() {
           href: "#menu",
         },
       ]}
-      imageSrc="https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=j5fh6x"
+      imageSrc="https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=j5fh6x&_wi=1"
       imageAlt="fine dining restaurant interior"
       mediaAnimation="slide-up"
       avatars={[
@@ -149,7 +149,7 @@ export default function LandingPage() {
       description="Milan Restaurant was born from a passion for traditional techniques and premium fresh ingredients. We aim to create memories, not just meals."
       subdescription="Every element of our menu reflects the rich heritage of authentic flavors blended with modern presentation standards."
       icon={Award}
-      imageSrc="https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=9axj51"
+      imageSrc="https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=9axj51&_wi=1"
       mediaAnimation="blur-reveal"
       imageAlt="chef preparing gourmet meal"
     />
@@ -171,21 +171,21 @@ export default function LandingPage() {
           title: "Authentic Recipes",
           description: "Traditional secrets passed down through generations for an authentic taste.",
           buttonIcon: "Scroll",
-          imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=j5fh6x",
+          imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=j5fh6x&_wi=2",
           imageAlt: "gourmet association badge",
         },
         {
           title: "Elegant Atmosphere",
           description: "The perfect blend of cozy ambiance and refined service for every occasion.",
           buttonIcon: "Wine",
-          imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=9axj51",
+          imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=9axj51&_wi=2",
           imageAlt: "gourmet association badge",
         },
         {
           title: "Artistic Plating",
           description: "We believe dining is an art form that starts with the very first visual impression.",
           buttonIcon: "Palette",
-          imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=e49q3v",
+          imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=e49q3v&_wi=1",
           imageAlt: "gourmet association badge",
         },
       ]}
@@ -205,7 +205,7 @@ export default function LandingPage() {
           id: "1",
           name: "Truffle Tagliatelle",
           price: "$28",
-          imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=e49q3v",
+          imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=e49q3v&_wi=2",
         },
         {
           id: "2",
