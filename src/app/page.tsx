@@ -11,7 +11,6 @@ import NavbarStyleCentered from '@/components/navbar/NavbarStyleCentered/NavbarS
 import ProductCardTwo from '@/components/sections/product/ProductCardTwo';
 import MetricSplitMediaAbout from '@/components/sections/about/MetricSplitMediaAbout';
 import TestimonialCardFive from '@/components/sections/testimonial/TestimonialCardFive';
-import { ChefHat, Leaf, Star, Clock, MapPin, Mail, Phone, Facebook, Instagram, Twitter } from "lucide-react";
 
 export default function LandingPage() {
   return (
@@ -46,7 +45,7 @@ export default function LandingPage() {
             title="Authentic Italian Flavors in the Heart of the City"
             description="Milan Restaurant offers a curated culinary journey through Italy, combining traditional techniques with contemporary elegance."
             testimonials={[
-              { id: "1", name: "Elena V.", handle: "@elena_v", testimonial: "The truffle tagliatelle is a life-changing experience. Simply incredible!", rating: 5 }
+              { name: "Elena V.", handle: "@elena_v", testimonial: "The truffle tagliatelle is a life-changing experience. Simply incredible!", rating: 5 }
             ]}
             buttons={[{ text: "View Menu", href: "#menu" }, { text: "Reserve a Table", href: "#contact" }]}
             imageSrc="https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=j5fh6x"
@@ -74,6 +73,7 @@ export default function LandingPage() {
             textboxLayout="split"
             title="Our Core Philosophy"
             description="We believe in simplicity, freshness, and the power of shared dining moments."
+            useInvertedBackground={false}
             features={[
               { title: "Farm-to-Table Produce", description: "Sourced from local farms daily.", imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=leaf" },
               { title: "Artisan Craftsmanship", description: "Every dish is meticulously plated.", imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=chef" },
@@ -90,10 +90,11 @@ export default function LandingPage() {
             textboxLayout="split"
             title="Signature Menu"
             description="Discover our carefully selected main courses, appetizers, and signature desserts."
+            useInvertedBackground={false}
             products={[
-              { id: "1", brand: "Pasta", name: "Truffle Tagliatelle", price: "$28", rating: 5, imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=1" },
-              { id: "2", brand: "Meat", name: "Prime Wagyu Steak", price: "$45", rating: 5, imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=2" },
-              { id: "3", brand: "Pizza", name: "Neapolitan Margherita", price: "$22", rating: 4, imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=3" }
+              { id: "1", brand: "Pasta", name: "Truffle Tagliatelle", price: "$28", rating: 5, reviewCount: "128", imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=1" },
+              { id: "2", brand: "Meat", name: "Prime Wagyu Steak", price: "$45", rating: 5, reviewCount: "95", imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=2" },
+              { id: "3", brand: "Pizza", name: "Neapolitan Margherita", price: "$22", rating: 4, reviewCount: "82", imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=3" }
             ]}
           />
         </div>
@@ -103,6 +104,7 @@ export default function LandingPage() {
             title="What Our Guests Say"
             description="Honest feedback from food enthusiasts who visit us regularly."
             textboxLayout="split"
+            useInvertedBackground={false}
             testimonials={[
               { id: "1", name: "Marco Rossi", date: "Oct 2024", title: "Exceptional!", quote: "The most authentic Italian meal I've had in years. The service is top-notch.", avatarSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/default/no-image.jpg?id=p1", tag: "Foodie" }
             ]}
@@ -120,6 +122,7 @@ export default function LandingPage() {
             ]}
             faqsAnimation="slide-up"
             textboxLayout="split"
+            useInvertedBackground={false}
           />
         </div>
 
@@ -131,8 +134,9 @@ export default function LandingPage() {
               { name: "name", type: "text", placeholder: "Full Name", required: true },
               { name: "email", type: "email", placeholder: "Email Address", required: true }
             ]}
-            textarea={{ name: "message", placeholder: "How can we assist you?", rows: 4 }}
+            textarea={{ name: "message", placeholder: "How can we assist you?", rows: 4, required: true }}
             buttonText="Send Request"
+            useInvertedBackground={false}
           />
         </div>
 
